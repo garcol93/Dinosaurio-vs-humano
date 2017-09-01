@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=Humana
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Humano\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=raza\ a\u00F1os
+comment1.target=Humana(Raza,\ int)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Humano\r\n
+comment2.params=
+comment2.target=java.lang.String\ getBichoName()
+comment3.params=
+comment3.target=java.lang.String\ getRaza()
+comment4.params=
+comment4.target=void\ mover()
+comment4.text=\r\n\ mueve\ humana\r\n
+numComments=5

@@ -11,6 +11,7 @@ import javafx.animation.Animation;
 import java.util.Random;
 import java.util.ArrayList;
 import javafx.scene.shape.Shape;
+import javafx.scene.shape.Rectangle;
 
 import javafx.scene.text.Text;
 import javafx.scene.paint.*;
@@ -33,84 +34,85 @@ public class Game extends Application
     public static final int NUMERO_HUMANO = 5;
     public static final int NUMERO_HUMANA = 8;
     
-    private static double shipXSpeed;
-    private static double shipYSpeed;
+    private static double bichoXSpeed;
+    private static double bichoYSpeed;
     
-    private static int shipsNumber;
-    private static int dinosauriosShipsNumber;
-    private static int humanoShipsNumber;
-    private static int humanaShipsNumber;
+    private static int bichosNumber;
+    private static int dinosaurioBichosNumber;
+    private static int humanoBichosNumber;
+    private static int humanaBichosNumber;
     
-    public ArrayList<Poblacion> ships;
+    public ArrayList<Poblacion> bichos;
 
      public static void main(String[] args)
     {
         launch(args);
     }
+    
     @Override
     public void start(Stage escenario)
     {
          //Obtenemos el numero total de poblacion
-        shipsNumber = NUMERO_DINOSAURIOS + NUMERO_HUMANO + NUMERO_HUMANA;
+        bichosNumber = NUMERO_DINOSAURIOS + NUMERO_HUMANO + NUMERO_HUMANA;
         //obtener numero dinosaurios
-        dinosauriosShipsNumber = NUMERO_DINOSAURIOS;
+        dinosaurioBichosNumber = NUMERO_DINOSAURIOS;
         //obtener numero humanos
-        humanoShipsNumber = NUMERO_HUMANO;
+        humanoBichosNumber = NUMERO_HUMANO;
         //obtener numero humanas
-        humanaShipsNumber = NUMERO_HUMANA;
+        humanaBichosNumber = NUMERO_HUMANA;
         
         Group contenedor = new Group();
         Scene escena = new Scene(contenedor, ANCHO_ESCENA, ALTO_ESCENA); 
         //creamos Poblacion
-        ships = new ArrayList<>();
+        bichos = new ArrayList<>();
         Random randomPosition = new Random();
-        int numberOfShipsAdded = 0;
-        for(int i = 0; i < shipsNumber; i++)
+        int numberOfBichosAdded = 0;
+        for(int i = 0; i < bichosNumber; i++)
         {
 
             for(int dinosaurioNuevo = 0; dinosaurioNuevo < NUMERO_DINOSAURIOS; dinosaurioNuevo++)
             {
                 Dinosaurio dinosaurio = new Dinosaurio(Raza.DINOSAURIO,0,0);
-                ships.add(dinosaurio);
+                bichos.add(dinosaurio);
             }
 
             for(int humanoNuevo = 0; humanoNuevo < NUMERO_HUMANO; humanoNuevo++)
             {
                 Humano humano = new Humano(Raza.HUMANO,0);
-                ships.add(humano);                
+                bichos.add(humano);                
             }
 
             for(int humanaNueva = 0; humanaNueva < NUMERO_HUMANA; humanaNueva++)
             {
                 Humana humana = new Humana(Raza.HUMANA,0);
-                ships.add(humana);                
+                bichos.add(humana);                
             }
-            boolean shipAdded = false;
+            boolean bichoAdded = false;
 
-            while(!shipAdded)
+            while(!bichoAdded)
             {
-                int shipXPosition = randomPosition.nextInt(ANCHO_ESCENA - 50);
-                int shipYPosition = randomPosition.nextInt(ALTO_ESCENA - 20 - ALTO_BARRA_SUPERIOR);
+                int bichoXPosition = randomPosition.nextInt(ANCHO_ESCENA - 50);
+                int bichoYPosition = randomPosition.nextInt(ALTO_ESCENA - 20 - ALTO_BARRA_SUPERIOR);
 
-                Text ship = new Text();
-                ship.setX(shipXPosition);
-                ship.setY(shipYPosition);
-                
-                if (ships.get(i).getRaza().equals("dinosaurio"))
+                Text bicho = new Text();
+                bicho.setX(bichoXPosition);
+                bicho.setY(bichoYPosition);
+                bicho.setText(bichos.get(numberOfBichosAdded).getBichoName());
+                if (bichos.get(i).getRaza().equals("dinosaurio"))
                 {
-                    ship.setFill(Color.RED);
+                    bicho.setFill(Color.RED);
                 }
-                if (ships.get(i).getRaza().equals("humano"))
+                if (bichos.get(i).getRaza().equals("humano"))
                 {
-                    ship.setFill(Color.BLUE);
+                    bicho.setFill(Color.BLUE);
                 }
-                if (ships.get(i).getRaza().equals("humana"))
+                if (bichos.get(i).getRaza().equals("humana"))
                 {
-                    ship.setFill(Color.PINK);
+                    bicho.setFill(Color.GREEN);
                 }
-                contenedor.getChildren().add(ship);
-                numberOfShipsAdded++;
-                shipAdded = true;
+                contenedor.getChildren().add(bicho);
+                numberOfBichosAdded++;
+                bichoAdded = true;
             }
         }
         escenario.setScene(escena);
@@ -119,10 +121,10 @@ public class Game extends Application
         KeyFrame keyframe = new KeyFrame(Duration.seconds(0.01), event -> 
                 {
 
-                    //DesplazamIENTO POBLACION
-                    for(int i = 0; i < shipsNumber; i++)
+                    //Desplazamiento POBLACION
+                    for(int i = 0; i < bichosNumber; i++)
                     {
-                        ships.get(i).mover();
+                        bichos.get(i).mover();
                     }
                 }
             );

@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Poblacion
+comment1.params=raza\ a\u00F1os
+comment1.target=Poblacion(Raza,\ int)
+comment1.text=\r\n\ constructor\ de\ Poblacion(DIOS)\r\n
+comment2.params=
+comment2.target=java.lang.String\ getBichoName()
+comment3.params=
+comment3.target=void\ aumentaA\u00F1os()
+comment3.text=\r\n\ aumenta\ un\ a\u00F1o\ despues\ de\ un\ turno\r\n
+comment4.params=
+comment4.target=java.lang.String\ getRaza()
+comment4.text=\r\n\ Obtener\ raza\r\n
+comment5.params=
+comment5.target=void\ mover()
+numComments=6

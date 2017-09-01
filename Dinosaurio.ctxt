@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Dinosaurio
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Humano\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=raza\ a\u00F1os\ hambre
+comment1.target=Dinosaurio(Raza,\ int,\ int)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ dino\r\n
+comment2.params=
+comment2.target=java.lang.String\ getBichoName()
+comment3.params=
+comment3.target=int\ getnivelHambre()
+comment4.params=
+comment4.target=java.lang.String\ getRaza()
+comment5.params=
+comment5.target=void\ mover()
+comment5.text=\r\n\ mueve\ dino\r\n
+numComments=6
